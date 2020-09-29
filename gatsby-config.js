@@ -7,10 +7,12 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: 'Full-Stack Bootcamp!',
+    title: 'Tumultos y miradas',
     author: 'David Loynaz'
   }, 
   plugins: [
+    `gatsby-plugin-playground`,
+    
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',

@@ -18,6 +18,7 @@ export const query = graphql`
     }
   }
   `
+  console.log(query)
 
 
 const Blog = (props) => {

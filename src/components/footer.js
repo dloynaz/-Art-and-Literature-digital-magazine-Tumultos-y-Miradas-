@@ -17,7 +17,7 @@ const Footer = () => {
 
     return(
         <footer className={footerStyles.footer}>
-          <p>Created by {data.site.siteMetadata.author}, copyright 2020</p>
+          <p style={{textAlign: "center", fontSize: '0.5rem' }}> COPYRIGHT © TODOS LOS DERECHOS RESERVADOS - 2020 - {data.site.siteMetadata.author.toUpperCase()}</p>
         </footer>
     )
 }

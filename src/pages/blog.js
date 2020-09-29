@@ -31,7 +31,7 @@ const BlogPage = () => {
   return (
     <Layout>
     <Head title="Blogs"/>
-      <h1>My Blog</h1>
+      <h1 className={blogStyles.title}>Derrumbes en la vía,</h1>
 
       <ol className={blogStyles.posts}>
         {edges.map(item => {

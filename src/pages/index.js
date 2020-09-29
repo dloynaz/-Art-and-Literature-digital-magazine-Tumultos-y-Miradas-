@@ -9,9 +9,8 @@ const IndexPage = () => {
   return(
     <Layout>
       <Head title="Home"/>
-      <h1>Hello.</h1>
-      <h2>I'm David, an almost full-stack developer</h2>
-
+      <h1>Bienvenido,</h1>
+      <h2>vigorexico frente a un ventilador de dimensiones ridículas</h2>
     </Layout>
   )
 }
