@@ -6,19 +6,22 @@ import Layout from '../components/layout'
 
 import Head from '../components/head'
 
+import templateStyle from './template.module.scss'
+
 
 export const query = graphql`
   query($slug: String!) {
     contentfulBlogPost(slug: {eq: $slug}) {
       title
       publishedDate(formatString: "MMMM Do, YYYY")
+      author
       body {
         json
       }
     }
   }
   `
-  console.log(query)
+
 
 
 const Blog = (props) => {
@@ -31,12 +34,14 @@ const Blog = (props) => {
       }
     }
   }
+
   return (
     <Layout>
       <Head title={props.data.contentfulBlogPost.title} />
       <h1>{props.data.contentfulBlogPost.title}</h1>
       <p>{props.data.contentfulBlogPost.publishedDate}</p>
-      {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
+      {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}    
+      <p className={templateStyle.author}>Autor: {props.data.contentfulBlogPost.author}</p>
     </Layout>
   )
 }

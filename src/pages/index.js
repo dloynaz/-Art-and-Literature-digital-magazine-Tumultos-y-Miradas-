@@ -5,10 +5,11 @@ import Layout from '../components/layout'
 
 import Head from '../components/head'
 
+
 const IndexPage = () => {
-  return(
+  return (
     <Layout>
-      <Head title="Home"/>
+      <Head title="Home" />
       <h1>Bienvenido,</h1>
       <h2>vigorexico frente a un ventilador de dimensiones ridículas</h2>
     </Layout>
