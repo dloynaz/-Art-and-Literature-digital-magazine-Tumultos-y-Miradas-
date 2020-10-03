@@ -1,45 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla:wght@100&display=swap');
+
 .posts {
     list-style-type: none;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .title {
     font-size: 2rem;
+    margin-bottom: 5rem;
+    animation: 1s infinite ;
+    animation-name: flashes;
 }
 
 .post {
     margin: 1rem 0;
     a {
-        background: whitesmoke;
+        background: greenyellow;
         border-radius: 1rem;
-        color: #000000;
+        color: whitesmoke;
         display: flex;
         text-decoration: none;
-        height: 150px;
+        height: 200px;
+        width: 100%;
+        transition: 1s;
+        transition-timing-function: ease-in-out;
+
+        &:hover{
+            .textContainer {
+                transform: translate(15%);
+                z-index: 1;
+            }
+            .imgContainer {
+                img {
+                    transition: 1s;
+                    transition-timing-function: ease-in-out;
+                    filter: invert(70%)
+                }
+            }
+        }
         .textContainer {
-            flex: 2;
+            z-index: 1;
+            transition: 1s;
+            background-color: black;
+            flex: 1;
             h2 {
                 margin: 1rem;
+                font-size: 1rem;
             }
 
             p {
                 color: #777777;
                 font-size: 0.8rem;
                 margin: 1rem;
+                font-family: 'Piazzolla', serif;
             }
         }
         .imgContainer {
-            flex: 1;
-            border-radius: 0rem 1rem 1rem 0rem;
+            flex: 2;
             overflow: hidden;
-            img {
-                width: 100%;
-                height: 100%;
+            height: 100%;
+
+            img {	
+                transition: 1s;
+                transition-timing-function: ease-in-out;
+                filter: invert(0%);
             }
         }
     }
-
-    a:hover {
-        background: #e4e4e4;
-    }
 }
+
+@media screen and (max-width: 700px) {
+    .title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .post {
+        a {
+            flex-direction: column;
+            .textContainer {
+                animation: 5s ease infinite ;
+                animation-name: pulse;
+            }
+        }
+    }
+    @keyframes pulse {
+        75% {
+            transform: translateY(15%);
+        }
+      }    
+  }
+
+  @keyframes flashes {
+      0% {
+
+      }
+      25%{
+          
+      }
+      50%{
+        
+      }
+      75%{
+        
+      }
+      100%{
+        
+      }
+  }
+
+
+
+
+

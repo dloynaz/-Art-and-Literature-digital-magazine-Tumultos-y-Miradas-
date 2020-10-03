@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+
 
 import Layout from '../components/layout'
 
@@ -8,8 +9,40 @@ import blogStyles from './blog.module.scss'
 
 import Head from '../components/head'
 
+import Button from 'react-bootstrap/Button';
+
 const BlogPage = () => {
-  const data = useStaticQuery(graphql`
+
+  const [opacity, setOpacity] = useState({
+    transition: "1s",
+    opacity: "0"
+  })
+
+  useEffect(()=> {
+   const timer = setTimeout(() => {
+    setOpacity({
+      transition: "1s",
+      opacity: "1"
+    })
+   }, 1000)
+   return () => clearTimeout(timer);
+  }, [])
+  console.log(opacity)
+
+  let data = {
+    allContentfulBlogPost: {
+      edges:  {
+        node: {
+          title:"Loading",
+          publishedDate: "Loading",
+
+
+        }
+      }
+    }
+  }
+
+  data = useStaticQuery(graphql`
   query {
     allContentfulBlogPost (
       sort: {
@@ -33,6 +66,7 @@ const BlogPage = () => {
   }
     `)
   const edges = data.allContentfulBlogPost.edges
+
   return (
     <Layout>
       <Head title="Blogs" />
@@ -40,7 +74,7 @@ const BlogPage = () => {
       <ol className={blogStyles.posts}>
         {edges.map(item => {
           return (
-            <li className={blogStyles.post}>
+            <li className={blogStyles.post} style={opacity}>
               <Link to={`/blog/${item.node.slug}`}>
                 <div className={blogStyles.textContainer}>
                   <h2>{item.node.title}</h2>
