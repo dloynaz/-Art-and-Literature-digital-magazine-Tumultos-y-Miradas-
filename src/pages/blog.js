@@ -47,7 +47,7 @@ const BlogPage = () => {
     allContentfulBlogPost (
       sort: {
       fields: publishedDate,
-      order: ASC
+      order: DESC
      }
    ) {
       edges {
@@ -68,14 +68,14 @@ const BlogPage = () => {
   const edges = data.allContentfulBlogPost.edges
 
   return (
-    <Layout>
+    <div>
       <Head title="Blogs" />
       <h1 className={blogStyles.title}>Derrumbes en la vía,</h1>
       <ol className={blogStyles.posts}>
         {edges.map(item => {
           return (
             <li className={blogStyles.post} style={opacity}>
-              <Link to={`/blog/${item.node.slug}`}>
+              <Link to={`/blog/${item.node.slug}`} className={blogStyles.link}>
                 <div className={blogStyles.textContainer}>
                   <h2>{item.node.title}</h2>
                   <p>{item.node.publishedDate}</p>
@@ -88,7 +88,7 @@ const BlogPage = () => {
           )
         })}
       </ol>
-    </Layout>
+    </div>
   )
 }
 

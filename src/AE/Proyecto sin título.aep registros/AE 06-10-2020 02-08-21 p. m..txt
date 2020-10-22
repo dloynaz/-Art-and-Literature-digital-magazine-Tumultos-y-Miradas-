@@ -1,0 +1,8 @@
+  06/10/2020 02:08:21 p. m.: Iniciando composición "Comp 1".
+
+  Salida a: D:\epitafios\Comp 1_1.avi      Procesamiento detenido por el usuario.  Advertencia de After Effects: No se ha encontrado el archivo 'C:\Users\Dloyn\AppData\Local\Temp\Adobe\After Effects\17.1\Disk Cache - DESKTOP-QDJC3SU.noindex\26\2693678e-a43e-4127-15d7-9e388ba9c9f9.ADBE ICV.B088648.AAAAAPAPywo=.aecache'.    Procesamiento detenido por el usuario.  Error de After Effects: Un módulo de salida ha dejado de responder. Puede que el archivo esté dañado. Es posible que sea necesario reiniciar After Effects.  06/10/2020 02:11:29 p. m.: Composición finalizada "Comp 1".
+
+
+  Tiempo total transc.: 2 min, 52 s
+Registro cerrado en 06/10/2020 a las 02:11:29 p. m.
+

@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+
 import { Link, graphql, useStaticQuery } from 'gatsby'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { faCoffee, faBars } from '@fortawesome/free-solid-svg-icons'
 
 import headerStyles from './header.module.scss'
 
-const Header = () => {
+import './style.css'
+
+const Header = React.memo(() => {
     const data = useStaticQuery(graphql`
       query {
         site  {
@@ -15,33 +22,117 @@ const Header = () => {
       }
     `)
 
+    const [navPosition, setNavPosition] = useState({
+        right: "-225px"
+    })
+
+    const [barRotation, setBarRotation] = useState({
+        transform: "rotate(0deg)"
+    })
+
+    const [coffeePosition, setCoffeePosition] = useState({
+        transition: "1s",
+        transform: "translate(0px)"
+    })
+
+
+    const handleClick = () => {
+        window.scrollTo(0, 0)
+        if (navPosition.right === "0") {
+            setNavPosition({
+                right: "-225px"
+            })
+            setBarRotation({
+                transform: "rotate(0deg)"
+            })
+
+        } else {
+            setNavPosition({
+                right: "0"
+            })
+            setBarRotation({
+                transform: "rotate(90deg)"
+            })
+        }
+    }
+
+    function handlePositionCoffee(arg) {
+        if (navPosition.right === "0") {
+            setNavPosition({
+                right: "-225px"
+            })
+            setBarRotation({
+                transform: "rotate(0deg)"
+            })
+
+        } else {
+            setNavPosition({
+                right: "0"
+            })
+            setBarRotation({
+                transform: "rotate(90deg)"
+            })
+        }
+        switch (arg) {
+            case "Inicio":
+                setCoffeePosition({
+                    transition: "1s",
+                    transform: "translate(0px)"
+                })
+                break
+            case "Articulos":
+                setCoffeePosition({
+                    transition: "1s",
+                    transform: "translate(72px)"
+                })
+                break
+            case "About":
+                setCoffeePosition({
+                    transition: "1s",
+                    transform: "translate(166px)"
+                })
+                break
+            case "Contact":
+                setCoffeePosition({
+                    transition: "1s",
+                    transform: "translate(262px)"
+                })
+                break
+        }
+
+    }
+
 
 
     return (
         <header className={headerStyles.header}>
-            <h1>
-              <Link to="/" className={headerStyles.title}>
-                {data.site.siteMetadata.title}
-              </Link>
-            </h1>
-            <nav>
-                <ul className={headerStyles.navList}>
+            <div className={headerStyles.container}>
+                <h1 className={headerStyles.title}>
+                    <Link to="/" className={headerStyles.titleLink} onClick={handleClick} onClick={() => handlePositionCoffee("Inicio")}>
+                        {data.site.siteMetadata.title}
+                    </Link>
+                </h1>
+                <FontAwesomeIcon icon={faBars} className={headerStyles.bar} onClick={handleClick} style={barRotation} />
+            </div>
+            <FontAwesomeIcon style={coffeePosition} icon={faCoffee} className={headerStyles.coffee} />
+            <nav className={headerStyles.navListContainer}>
+                <ul className={headerStyles.navList} style={navPosition} >
                     <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/">Inicio</Link>
+                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} onClick={handleClick} onClick={() => handlePositionCoffee("Inicio")} to="/">Inicio</Link>
                     </li>
                     <li>
-                        <Link className={headerStyles.navItem}  activeClassName={headerStyles.activeNavItem} to="/blog">Articulos</Link>
+                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} onClick={handleClick} onClick={() => handlePositionCoffee("Articulos")} to="/blog">Articulos</Link>
                     </li>
                     <li>
-                        <Link className={headerStyles.navItem}  activeClassName={headerStyles.activeNavItem} to="/about">Nosotros</Link>
+                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} onClick={handleClick} onClick={() => handlePositionCoffee("About")} to="/about">Nosotros</Link>
                     </li>
                     <li>
-                        <Link className={headerStyles.navItem}  activeClassName={headerStyles.activeNavItem} to="/contact">Contacto</Link>
+                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} onClick={handleClick} onClick={() => handlePositionCoffee("Contact")} to="/contact">Contacto</Link>
                     </li>
                 </ul>
             </nav>
         </header>
     )
-}
+});
 
 export default Header

@@ -1,3 +1,21 @@
 html {
     background-color: black;
+    overflow-x: hidden;
+}
+
+#element2{
+    flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 700px) {
+    #element2{
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (min-width: 700px){
+    #element2 h1 {
+        position: relative;
+        left: -10%;
+    }
 }

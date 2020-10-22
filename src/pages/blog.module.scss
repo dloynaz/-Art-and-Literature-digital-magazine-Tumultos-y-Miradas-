@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Piazzolla:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Piazzolla:wght@100&display=swap");
 
 .posts {
     list-style-type: none;
@@ -10,7 +10,7 @@
 .title {
     font-size: 2rem;
     margin-bottom: 5rem;
-    animation: 1s infinite ;
+    animation: 1s infinite;
     animation-name: flashes;
 }
 
@@ -26,20 +26,8 @@
         width: 100%;
         transition: 1s;
         transition-timing-function: ease-in-out;
+        
 
-        &:hover{
-            .textContainer {
-                transform: translate(15%);
-                z-index: 1;
-            }
-            .imgContainer {
-                img {
-                    transition: 1s;
-                    transition-timing-function: ease-in-out;
-                    filter: invert(70%)
-                }
-            }
-        }
         .textContainer {
             z-index: 1;
             transition: 1s;
@@ -54,15 +42,14 @@
                 color: #777777;
                 font-size: 0.8rem;
                 margin: 1rem;
-                font-family: 'Piazzolla', serif;
+                font-family: "Piazzolla", serif;
             }
         }
         .imgContainer {
             flex: 2;
             overflow: hidden;
             height: 100%;
-
-            img {	
+            img {
                 transition: 1s;
                 transition-timing-function: ease-in-out;
                 filter: invert(0%);
@@ -70,6 +57,24 @@
         }
     }
 }
+
+@media screen and (min-width: 700px) {
+    .post:hover{
+        .textContainer {
+            transform: translate(15%);
+            z-index: 1;
+        }
+        .imgContainer {
+            img {
+                transition: 1s;
+                transition-timing-function: ease-in-out;
+                filter: invert(70%);
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
 
 @media screen and (max-width: 700px) {
     .title {
@@ -80,8 +85,21 @@
         a {
             flex-direction: column;
             .textContainer {
-                animation: 5s ease infinite ;
+                animation: 5s ease infinite;
                 animation-name: pulse;
+            }
+        }
+        &:hover {
+            .textContainer {
+                transform: translate(0%);
+                z-index: 1;
+            }
+            .imgContainer {
+                img {
+                    transition: 1s;
+                    transition-timing-function: ease-in-out;
+                    filter: invert(0%);
+                }
             }
         }
     }
@@ -89,28 +107,5 @@
         75% {
             transform: translateY(15%);
         }
-      }    
-  }
-
-  @keyframes flashes {
-      0% {
-
-      }
-      25%{
-          
-      }
-      50%{
-        
-      }
-      75%{
-        
-      }
-      100%{
-        
-      }
-  }
-
-
-
-
-
+    }
+}

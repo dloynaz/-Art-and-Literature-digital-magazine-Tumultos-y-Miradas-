@@ -11,8 +11,8 @@ module.exports = {
     author: 'David Loynaz'
   }, 
   plugins: [
+    `gatsby-plugin-layout`,
     `gatsby-plugin-playground`,
-    
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',

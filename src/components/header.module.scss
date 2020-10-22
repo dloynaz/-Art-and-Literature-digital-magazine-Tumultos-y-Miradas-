@@ -1,33 +1,127 @@
-.header{
+.header {
     padding: 1rem 0 3rem;
-
 }
 
-.title{
+.title-link {
     color: whitesmoke;
     font-size: 3rem;
     text-decoration: none;
 }
 
-.nav-list{
+.nav-list {
     display: flex;
     list-style-type: none;
     margin: 0;
 }
 
 .nav-item {
-    color: #E2E2E2;
-    font-size: .9rem;
+    color: #e2e2e2;
+    font-size: 0.9rem;
     margin-right: 1.3rem;
     text-decoration: none;
 }
 
-.nav-item:hover{
-    color: #BABABA;
+.nav-item:hover {
+    color: #bababa;
 }
 
-.active-nav-item{
-    color: #A5A5A5;
+.active-nav-item {
+    color: #a5a5a5;
 }
+
+.bar{
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+
+    .coffee {
+        display: none;
+    }
+
+    .nav-list-container{
+
+        width: 260px;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        overflow: hidden;
+        z-index: 5;
+
+        
+    }
+
+    .container {
+        display: flex;
+        
+    }
+
+    .title{
+        flex: 3;
+        min-width: 60%;
+    }
+
+    .title-link {
+        color: whitesmoke;
+        font-size: 3rem;
+        text-decoration: none;
+    }
+
+    .bar{
+        align-self: center;
+        flex: 1;
+        display: block;
+        font-size: 2rem;
+        position: relative;
+        left: 30px;
+        cursor: pointer;
+        transition: 1s;
+        z-index: 6;
+        width: 40px;
+    }
+
+    .header {
+        nav {
+            overflow: hidden;
+
+        }
+    }
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        height: 100vh;
+        background-color: black;
+        position: absolute;
+        z-index: 5;
+        padding-top:40%;
+        transition: 1s;
+        top: 0;
+        justify-content: space-around;
+    }
+    
+    .nav-item {
+
+        color: #e2e2e2;
+        font-size: 2.5rem;
+        margin-left: 1.3rem;
+        text-decoration: none;
+    }
+    
+    .nav-item:hover {
+        color: #bababa;
+    }
+    
+    .active-nav-item {
+        color: #a5a5a5;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .title-link{
+        font-size: 2rem;
+    }
+  }
 
 

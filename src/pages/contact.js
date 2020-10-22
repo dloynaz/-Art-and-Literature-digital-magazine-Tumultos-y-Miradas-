@@ -1,16 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-import Layout from '../components/layout'
 import Head from '../components/head'
 
+import contactStyle from './contact.module.scss'
+
 const ContactPage = () => {
+
+
     return (
-        <Layout>
-            <Head title="Contact"/>
-            <h1>This is my contact page</h1>
-            <p>If you want to build something awesome please send me an e-mail to <a href="mailto:davidloynazdev@gmail.com">davidloynazdev@gmail.com</a></p>
-            <p>or find me on my <a href="https://www.linkedin.com/in/david-loynaz-52b6251b2/" target="_blank">linkedin profile</a></p>
-        </Layout>
+        <div>
+            <Head title="Contact" />
+            <div className={contactStyle.box}>
+                    <div className={contactStyle.box1}><h1></h1></div>
+                    <div className={contactStyle.box2}><h1></h1></div>
+                    <div className={contactStyle.box3}><h1></h1></div>
+                    <div className={contactStyle.box4}><h1></h1></div>
+                    <div className={contactStyle.box5}><h1></h1></div>
+                    <div className={contactStyle.box6}><h1></h1></div>
+                    <p><a href="mailto:davidloynazdev@gmail.com" className={contactStyle.email}>dloynaz@hotmail.com</a></p>
+            </div>
+           
+        </div>
     )
 }
 

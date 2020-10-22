@@ -1,0 +1,127 @@
+.email {
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+@for $i from 1 through 6 {
+    .box#{$i} {
+        height: 200px;
+        width: calc(200px / 6);
+        background-color: rgb(255, 255, 255);
+        transition: 1s;
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        padding: 0px;
+        margin: 0px;
+    }
+}
+.box {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+@media screen and (min-width: 700px) {
+    .box:hover {
+        .box1 {
+            transform: translate(0px, 250px);
+            transition: 1s;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        .box2 {
+            transform: translate(0px, -250px);
+            transition: 1s;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        .box3 {
+            transform: translate(0px, 250px);
+            transition: 1s;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        .box4 {
+            transform: translate(0px, -250px);
+            transition: 1s;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        .box5 {
+            transform: translate(0px, 250px);
+            transition: 1s;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        .box6 {
+            transform: translate(0px, -250px);
+            transition: 1s;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+    }
+}
+@media screen and (max-width: 700px) {
+    .box {
+        .box1 {
+            transform: translate(0px, 250px);
+            transition: 1s;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            animation: left 1s ease;
+            animation: left 3s ease;
+        }
+        .box2 {
+            transform: translate(0px, -250px);
+            transition: 1s;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            animation: right 3s ease;
+        }
+        .box3 {
+            transform: translate(0px, 250px);
+            transition: 1s;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            animation: left 3s ease;
+        }
+        .box4 {
+            transform: translate(0px, -250px);
+            transition: 1s;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            animation: right 3s ease;
+        }
+        .box5 {
+            transform: translate(0px, 250px);
+            transition: 1s;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            animation: left 3s ease;
+        }
+        .box6 {
+            transform: translate(0px, -250px);
+            transition: 1s;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            animation: right 3s ease;
+        }
+    }
+    @keyframes left {
+        0% {
+            transform: translate(0px, 0px);
+        }
+        50%{
+            transform: translate(0px, 0px);
+        }
+        100% {
+            transform: translate(0px, 250px);
+        }
+    }
+
+    @keyframes right {
+        0% {
+            transform: translate(0px, 0px);
+        }
+        50%{
+            transform: translate(0px, 0px);
+        }
+        100% {
+            transform: translate(0px, -250px);
+        }
+    }
+}
