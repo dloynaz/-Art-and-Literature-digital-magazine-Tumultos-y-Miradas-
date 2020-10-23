@@ -25,7 +25,7 @@ const BlogPage = () => {
       })
     }, 1000)
     return () => clearTimeout(timer);
-  }, [edges])
+  }, [])
 
   let data = {
     allContentfulBlogPost: {
