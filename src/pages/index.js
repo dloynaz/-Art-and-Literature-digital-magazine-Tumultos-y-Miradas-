@@ -3,19 +3,6 @@ import { Link } from 'gatsby'
 
 import Word from '../components/word'
 
-import {
-  Img00,
-  Img01,
-  Img02,
-  Img03,
-  Img04,
-  Img05,
-  Img06,
-  Img07,
-  Img08,
-  Img09
-
-} from '../assets/indexImg'
 
 import Head from '../components/head'
 
@@ -51,7 +38,55 @@ const IndexPage = (props) => {
         }
       }
     }
+    contentfulIndexImg {
+      img00 {
+        file {
+          url
+        }
+      }
+      img01  {
+        file {
+          url
+        }
+      }
+      img02  {
+        file {
+          url
+        }
+      }
+      img03  {
+        file {
+          url
+        }
+      }
+      img04  {
+        file {
+          url
+        }
+      }
+      img05  {
+        file {
+          url
+        }
+      }
+      img06  {
+        file {
+          url
+        }
+      }
+      img08  {
+        file {
+          url
+        }
+      }
+      img09  {
+        file {
+          url
+        }
+      }
+    }
   }
+  
   `)
 
   const edges = data.allContentfulBlogPost.edges
@@ -74,7 +109,7 @@ const IndexPage = (props) => {
       setOpacity({
         opacity: "1"
       })
-    }, 1000)
+    }, 3000)
 
     return () => clearTimeout(timer);
 
@@ -89,19 +124,7 @@ const IndexPage = (props) => {
   function declareImgSrc() {
     let today = new Date()
     today = today.getDate().toString()
-    let imgArray = [
-      Img00,
-      Img01,
-      Img02,
-      Img03,
-      Img04,
-      Img05,
-      Img06,
-      Img07,
-      Img08,
-      Img09
-    ]
-    setImgSrc(imgArray[today[1]])
+    setImgSrc(data.contentfulIndexImg[`img0${today[1]}`].file.url)
   }
 
 
@@ -113,7 +136,7 @@ const IndexPage = (props) => {
           <h1 className={indexStyle.title} style={opacity}>Bienvenida, </h1>
           <h2 className={indexStyle.description} style={opacity}>vigoréxica frente a un ventilador de dimensiones <Word /> </h2>
         </div>
-        <div  style={opacity} className={indexStyle.headerImgContainer}>
+        <div style={opacity} className={indexStyle.headerImgContainer}>
           <img src={imgSrc}></img>
         </div>
       </div>

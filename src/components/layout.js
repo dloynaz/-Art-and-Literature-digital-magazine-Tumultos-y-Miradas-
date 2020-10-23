@@ -6,7 +6,7 @@ import '../styles/index.scss'
 
 import './style.css'
 
-import solid from "../video.mp4"
+import solid from "../assets/video.webm"
 
 import layoutStyles from './layout.module.scss'
 

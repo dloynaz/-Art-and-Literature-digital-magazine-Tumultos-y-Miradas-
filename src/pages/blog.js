@@ -52,6 +52,7 @@ const BlogPage = () => {
    ) {
       edges {
         node {
+          author
           title
           slug
           publishedDate(formatString:"MMMM Do, YYYY")
@@ -78,6 +79,7 @@ const BlogPage = () => {
               <Link to={`/blog/${item.node.slug}`} className={blogStyles.link}>
                 <div className={blogStyles.textContainer}>
                   <h2>{item.node.title}</h2>
+                  <p style={{fontSize: "0.9rem"}}>{item.node.author}</p>
                   <p>{item.node.publishedDate}</p>
                 </div>
                 <div className={blogStyles.imgContainer}>
