@@ -130,7 +130,7 @@ const IndexPage = (props) => {
 
   return (
     <div>
-      <Head title="Home" />
+      <Head title="Inicio" />
       <div className={indexStyle.header}>
         <div className={indexStyle.headerText}>
           <h1 className={indexStyle.title} style={opacity}>Bienvenida, </h1>

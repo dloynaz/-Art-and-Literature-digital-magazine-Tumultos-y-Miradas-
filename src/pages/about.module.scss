@@ -1,7 +1,7 @@
 .carousel {
     display: flex;
     justify-content: flex-start;
-    margin-bottom:37%;
+    margin-bottom:35vh;
     animation: 50s ease-in-out infinite;
     animation-name: carrusel;
     .assets-container{
@@ -37,7 +37,7 @@
 
 
 
-@media screen and (max-width: 1050px){
+@media screen and (max-width: 700px){
     .carousel {
         display: flex;
         justify-content: flex-start;
@@ -47,11 +47,11 @@
         .assets-container{
             display: static;
             flex: 1;
-            height: 10vh;
+            height: 12vh;
             overflow: hidden;
         }
         &-assets{
-            min-height: 10vh;
+            min-height: 12vh;
             width: 100%;
             transition: 2s;
         }

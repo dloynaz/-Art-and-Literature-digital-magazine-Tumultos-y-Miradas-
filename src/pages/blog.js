@@ -66,14 +66,17 @@ const BlogPage = () => {
     `)
   let edges = data.allContentfulBlogPost.edges
 
-  const handleChange = (data) => {
-    console.log(data)
-    const regex = new RegExp(data, "gi");
-    edges = edges.filter(edge => {
+  const handleChange = (e) => {
+    const regex = new RegExp(e.target.value, "gi");
+    const data = edges.filter(edge => {
       return edge.node.author.match(regex)
     })
-    
+    setRes(data)
+
   }
+
+
+  const[res , setRes] = useState(data.allContentfulBlogPost.edges);
 
 
   return (
@@ -83,7 +86,7 @@ const BlogPage = () => {
         <input className={blogStyles.search} type={"text"} placeholder="Buscar por autor" onChange={handleChange}></input>
       </form>
       <ol className={blogStyles.posts}>
-        {edges.map(item => {
+        {res.map(item => {
           return (
             <li className={blogStyles.post} style={opacity}>
               <Link to={`/blog/${item.node.slug}`} className={blogStyles.link}>
