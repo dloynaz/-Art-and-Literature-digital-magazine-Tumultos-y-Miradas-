@@ -1,20 +1,62 @@
 .carousel {
     display: flex;
-    overflow: hidden;
-    justify-content: space-evenly;
-    margin-bottom: 2rem;
+    justify-content: flex-start;
+    margin-bottom:37%;
+    animation: 50s ease-in-out infinite;
+    animation-name: carrusel;
     .assets-container{
+        display: static;
         flex: 1;
-        overflow: hidden;
         height: 20vh;
+        overflow: hidden;
     }
     &-assets{
         min-height: 20vh;
         width: 100%;
         transition: 2s;
-        transform: scale(1);
-        &:hover{
-          transform: scale(1.1);
+    }
+}
+
+@keyframes carrusel {
+    0%{
+        transform: scale(4) translate(37.5%);
+    }
+    25%{
+        transform: scale(4) translate(12.5%);
+    }
+    50% {
+        transform: scale(4) translate(-12.5%);
+    }
+    75%{
+        transform: scale(4) translate(-37.5%);
+    }
+    100%{
+        transform: scale(4) translate(37.5%);
+    }
+}
+
+
+
+@media screen and (max-width: 1050px){
+    .carousel {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom:45%;
+        animation: 50s ease-in-out infinite;
+        animation-name: carrusel;
+        .assets-container{
+            display: static;
+            flex: 1;
+            height: 10vh;
+            overflow: hidden;
+        }
+        &-assets{
+            min-height: 10vh;
+            width: 100%;
+            transition: 2s;
         }
     }
 }
+
+
+

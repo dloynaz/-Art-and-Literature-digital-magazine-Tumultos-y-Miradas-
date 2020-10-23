@@ -1,6 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Piazzolla:wght@100&display=swap");
 
+.search{
+    margin-bottom: 10%;
+    background-color: black;
+    color: whitesmoke;
+    border: none;
+    border-bottom: solid thin white;
+    float: right;
+    
+}
+
+.search:focus{
+    outline: none;
+}
+
 .posts {
+    clear: right;
     list-style-type: none;
     margin: 0;
     display: flex;

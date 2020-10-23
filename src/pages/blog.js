@@ -1,7 +1,5 @@
-import React, {useEffect, useState} from 'react'
+import React, { useForm, useEffect, useState } from 'react'
 
-
-import Layout from '../components/layout'
 
 import { graphql, useStaticQuery, Link } from 'gatsby'
 
@@ -9,31 +7,31 @@ import blogStyles from './blog.module.scss'
 
 import Head from '../components/head'
 
-import Button from 'react-bootstrap/Button';
+
 
 const BlogPage = () => {
+
 
   const [opacity, setOpacity] = useState({
     transition: "1s",
     opacity: "0"
   })
 
-  useEffect(()=> {
-   const timer = setTimeout(() => {
-    setOpacity({
-      transition: "1s",
-      opacity: "1"
-    })
-   }, 1000)
-   return () => clearTimeout(timer);
-  }, [])
-  console.log(opacity)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setOpacity({
+        transition: "1s",
+        opacity: "1"
+      })
+    }, 1000)
+    return () => clearTimeout(timer);
+  }, [edges])
 
   let data = {
     allContentfulBlogPost: {
-      edges:  {
+      edges: {
         node: {
-          title:"Loading",
+          title: "Loading",
           publishedDate: "Loading",
 
 
@@ -66,12 +64,24 @@ const BlogPage = () => {
     }
   }
     `)
-  const edges = data.allContentfulBlogPost.edges
+  let edges = data.allContentfulBlogPost.edges
+
+  const handleChange = (data) => {
+    console.log(data)
+    const regex = new RegExp(data, "gi");
+    edges = edges.filter(edge => {
+      return edge.node.author.match(regex)
+    })
+    
+  }
+
 
   return (
     <div>
       <Head title="Blogs" />
-      <h1 className={blogStyles.title}>Derrumbes en la vía,</h1>
+      <form >
+        <input className={blogStyles.search} type={"text"} placeholder="Buscar por autor" onChange={handleChange}></input>
+      </form>
       <ol className={blogStyles.posts}>
         {edges.map(item => {
           return (
@@ -79,7 +89,7 @@ const BlogPage = () => {
               <Link to={`/blog/${item.node.slug}`} className={blogStyles.link}>
                 <div className={blogStyles.textContainer}>
                   <h2>{item.node.title}</h2>
-                  <p style={{fontSize: "0.9rem"}}>{item.node.author}</p>
+                  <p style={{ fontSize: "0.9rem" }}>{item.node.author}</p>
                   <p>{item.node.publishedDate}</p>
                 </div>
                 <div className={blogStyles.imgContainer}>

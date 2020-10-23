@@ -8,7 +8,6 @@ import Head from '../components/head'
 
 import aboutStyle from './about.module.scss'
 
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 
 
 const AboutPage = () => {
@@ -31,8 +30,8 @@ const AboutPage = () => {
   const edges = data.allContentfulAuthor.edges
   console.log(edges)
   return (
-    <div>
-      <Head to="About" />
+    <div style={{overflow: "hidden"}}>
+      <Head title="Nosotros" />
       <div className={aboutStyle.carousel}>
       {
         edges.map(item => {
