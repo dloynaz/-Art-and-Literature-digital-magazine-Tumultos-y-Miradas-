@@ -22,6 +22,7 @@ const Header = React.memo(() => {
       }
     `)
 
+
     const [navPosition, setNavPosition] = useState({
         right: "-225px"
     })
@@ -31,9 +32,24 @@ const Header = React.memo(() => {
     })
 
     const [coffeePosition, setCoffeePosition] = useState({
+        opacity: "0",
         transition: "1s",
         transform: "translate(0px)"
     })
+
+    useEffect(() => {
+  
+        const timer = setTimeout(() => {
+            setCoffeePosition({
+                opacity: "1",
+                transition: "1s",
+                transform: "translate(0px)"
+          })
+        }, 3000)
+    
+        return () => clearTimeout(timer);
+    
+      }, [])
 
 
     const handleClick = () => {
