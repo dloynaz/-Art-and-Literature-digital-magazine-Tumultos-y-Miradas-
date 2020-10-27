@@ -47,11 +47,11 @@
         .assets-container{
             display: static;
             flex: 1;
-            height: 12vh;
+            height: 10vh;
             overflow: hidden;
         }
         &-assets{
-            min-height: 12vh;
+            min-height: 10vh;
             width: 100%;
             transition: 2s;
         }
