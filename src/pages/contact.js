@@ -4,6 +4,12 @@ import Head from '../components/head'
 
 import contactStyle from './contact.module.scss'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { faTelegram } from '@fortawesome/free-solid-svg-icons'
+
+
+
 const ContactPage = () => {
 
 
@@ -17,7 +23,7 @@ const ContactPage = () => {
                     <div className={contactStyle.box4}><h1></h1></div>
                     <div className={contactStyle.box5}><h1></h1></div>
                     <div className={contactStyle.box6}><h1></h1></div>
-                    <p><a href="mailto:davidloynazdev@gmail.com" className={contactStyle.email}>dloynaz@hotmail.com</a></p>
+                    <p><a href="https://t.me/zensorfictus" target="blank" className={contactStyle.email}>t.me/zensorfictus</a></p>
                 </div>
         </div>
     )
