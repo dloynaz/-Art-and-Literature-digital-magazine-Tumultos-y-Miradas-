@@ -4,7 +4,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faCoffee, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faCoffee, faBars, faPersonBooth } from '@fortawesome/free-solid-svg-icons'
 
 import headerStyles from './header.module.scss'
 
@@ -125,12 +125,12 @@ const Header = React.memo(() => {
             <div className={headerStyles.container}>
                 <h1 className={headerStyles.title}>
                     <Link to="/" className={headerStyles.titleLink} onClick={handleClick} onClick={() => handlePositionCoffee("Inicio")}>
-                        {data.site.siteMetadata.title}
+                        <i>{data.site.siteMetadata.title}</i>
                     </Link>
                 </h1>
                 <FontAwesomeIcon icon={faBars} className={headerStyles.bar} onClick={handleClick} style={barRotation} />
             </div>
-            <FontAwesomeIcon style={coffeePosition} icon={faCoffee} className={headerStyles.coffee} />
+            <FontAwesomeIcon style={coffeePosition} icon={faPersonBooth} className={headerStyles.coffee} />
             <nav className={headerStyles.navListContainer}>
                 <ul className={headerStyles.navList} style={navPosition} >
                     <li>

@@ -55,12 +55,15 @@
 
     .container {
         display: flex;
+        align-content: center;
+        justify-content: center;
         
     }
 
     .title{
         flex: 3;
         min-width: 60%;
+        margin-top: 5%;
     }
 
     .title-link {
@@ -84,6 +87,7 @@
     }
 
     .header {
+        margin-bottom: 10%;
         nav {
             overflow: hidden;
         }

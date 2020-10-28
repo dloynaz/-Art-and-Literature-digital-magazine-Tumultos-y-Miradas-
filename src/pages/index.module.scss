@@ -1,6 +1,7 @@
 .header {
     display: flex;
     margin-bottom: 3rem;
+    margin-top: 2rem;
     &-text {
         flex: 1;
         display: flex;
@@ -11,11 +12,12 @@
             position: relative;
             bottom: 70px;
             transition: 1s;
+            z-index: 3;
         }
         .description {
             position: absolute;
             margin-bottom: 0px;
-            width: 500px;
+            width: 550px;
             z-index: 1;
             background-color: black;
             padding-top: 2%;
@@ -116,6 +118,7 @@
             .title{
                 position: static;
                 z-index: 1;
+                margin-bottom: 0%;
                 
             }
             .description {

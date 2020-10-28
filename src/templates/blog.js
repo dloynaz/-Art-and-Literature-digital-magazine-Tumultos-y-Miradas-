@@ -73,10 +73,16 @@ const Blog = (props) => {
   }
 
   useEffect(() => {
+    const videoA = document.querySelector("#videoIdA")
+    const videoB = document.querySelector("#videoIdB")
+    videoA.playbackRate = 0.1;
+    videoB.playbackRate = 0.1;
     listener()
     window.addEventListener("scroll", listener);
     return () => {
       window.removeEventListener("scroll", listener);
+      videoA.playbackRate = 1;
+      videoB.playbackRate = 1;
     };
   }, [])
 

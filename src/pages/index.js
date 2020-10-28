@@ -137,8 +137,8 @@ const IndexPage = (props) => {
       <Head title="Inicio" />
       <div className={indexStyle.header}>
         <div className={indexStyle.headerText}>
-          <h1 className={indexStyle.title} style={opacity}>Bienvenida, </h1>
-          <h2 className={indexStyle.description} style={opacity}>vigoréxica frente a un ventilador de dimensiones <Word /> </h2>
+          <h1 className={indexStyle.title} style={opacity}>La apoteosis</h1>
+          <h2 className={indexStyle.description} style={opacity}>se encuentra en ese punto vacilante de dimensiones <Word /> </h2>
         </div>
         <div style={opacity} className={indexStyle.headerImgContainer}>
           <img src={imgSrc}></img>

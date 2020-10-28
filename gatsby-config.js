@@ -7,7 +7,7 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: 'Tumultos y miradas',
+    title: 'ZENSOR FICTUS',
     author: 'David Loynaz'
   }, 
   plugins: [

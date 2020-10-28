@@ -6,7 +6,7 @@ import '../styles/index.scss'
 
 import './style.css'
 
-import solid from "../assets/video.webm"
+import solid from "../assets/videoB.webm"
 
 import layoutStyles from './layout.module.scss'
 
@@ -20,9 +20,18 @@ const Layout = (props) => {
       <video
         loop
         autoPlay
-        className={layoutStyles.video}
+        className={layoutStyles.videoA}
         muted
-        id="myVideo"
+        id="videoIdA"
+      >
+        <source src={solid} type='video/mp4' />
+      </video>
+      <video
+        loop
+        autoPlay
+        className={layoutStyles.videoB}
+        muted
+        id="videoIdB"
       >
         <source src={solid} type='video/mp4' />
       </video>

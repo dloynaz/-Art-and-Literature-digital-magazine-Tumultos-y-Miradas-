@@ -12,19 +12,33 @@
     flex-grow: 1;
 }
 
-.video {
+.videoA {
     position: fixed;
-    width:100%;
-    left: 50%;
-    top: 50%;
+    width:10%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
     object-fit: cover;
-    transform: translate(-50%, -50%);
+    z-index: -1;
+
+}
+
+.videoB {
+    position: fixed;
+    width:10%;
+    height: 100%;
+    right: 0%;
+    top: 0%;
+    object-fit: cover;
     z-index: -1;
 
 }
 
 @media screen and (max-width: 900px) {
-    .video{
+    .videoA{
+        display: none;
+    }
+    .videoB{
         display: none;
     }
 }
