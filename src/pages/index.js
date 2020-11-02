@@ -124,10 +124,14 @@ const IndexPage = (props) => {
   function declareImgSrc() {
     let today = new Date()
     today = today.getDate().toString()
-    if(today[1] === "7"){
+    if(today[1] === "7" || today === "7"){
       setImgSrc(data.contentfulIndexImg[`img08`].file.url)
     } else {
-      setImgSrc(data.contentfulIndexImg[`img0${today[1]}`].file.url)
+      if(!today[1]){
+        setImgSrc(data.contentfulIndexImg[`img0${today}`].file.url)
+      } else {
+        setImgSrc(data.contentfulIndexImg[`img0${today[1]}`].file.url)
+      }
     }
   }
 
