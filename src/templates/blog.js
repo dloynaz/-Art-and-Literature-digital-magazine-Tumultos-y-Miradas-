@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { graphql, Link } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-import { faAngleLeft} from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 
 import Layout from '../components/layout'
 
@@ -63,10 +63,10 @@ const Blog = (props) => {
 
   const listener = () => {
 
-    var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
-      document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight ) - 800;
+    var limit = Math.max(document.body.scrollHeight, document.body.offsetHeight,
+      document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight) - 800;
     var position = Math.floor(window.scrollY) - limit
-    if(Number.isInteger(position / 5)){
+    if (Number.isInteger(position / 5)) {
       const newWidth = (Math.abs(position) * 50) / limit
       setWidth(`${newWidth}%`)
     }
@@ -95,11 +95,11 @@ const Blog = (props) => {
       <h1>{props.data.contentfulBlogPost.title}</h1>
       <p>{props.data.contentfulBlogPost.publishedDate}</p>
       {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
-      <div style={{display:"flex", justifyContent:"space-between"}}>
-      <Link to="/blog" className={templateStyle.button}><FontAwesomeIcon icon={faAngleLeft} className={templateStyle.icon}  /><span>Articulos</span></Link>
-      <div className={templateStyle.author}> <div className={templateStyle.authorImgContainer} ><img src={props.data.contentfulBlogPost.authorPhoto.file.url}></img></div><span>{props.data.contentfulBlogPost.author}</span></div>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <Link to="/blog" className={templateStyle.button}><FontAwesomeIcon icon={faAngleLeft} className={templateStyle.icon} /><span>Articulos</span></Link>
+        <div className={templateStyle.author}> <div className={templateStyle.authorImgContainer} ><img src={props.data.contentfulBlogPost.authorPhoto.file.url}></img></div><span>{props.data.contentfulBlogPost.author}</span></div>
       </div>
-      <ReadingBar width={width}/>
+      <ReadingBar width={width} />
 
     </div>
   )
