@@ -5,6 +5,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-90deg);
+    width: fit-content;
+    font-size: small;
 }
 
 @for $i from 1 through 6 {
