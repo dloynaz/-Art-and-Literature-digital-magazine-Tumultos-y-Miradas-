@@ -63,6 +63,19 @@
     }
 }
 @media screen and (max-width: 700px) {
+    @for $i from 1 through 6 {
+        .box#{$i} {
+
+            height: 150px;
+            width: calc(150px / 6);
+            background-color: rgb(255, 255, 255);
+            transition: 1s;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            padding: 0px;
+            margin: 0px;
+        }
+    }
+
     .box {
         .box1 {
             transform: translate(0px, 250px);
@@ -106,7 +119,7 @@
         0% {
             transform: translate(0px, 0px);
         }
-        50%{
+        50% {
             transform: translate(0px, 0px);
         }
         100% {
@@ -118,7 +131,7 @@
         0% {
             transform: translate(0px, 0px);
         }
-        50%{
+        50% {
             transform: translate(0px, 0px);
         }
         100% {

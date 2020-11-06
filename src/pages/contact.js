@@ -23,7 +23,7 @@ const ContactPage = () => {
                     <div className={contactStyle.box4}><h1></h1></div>
                     <div className={contactStyle.box5}><h1></h1></div>
                     <div className={contactStyle.box6}><h1></h1></div>
-                    <p><a href="https://t.me/zensorfictus" target="blank" className={contactStyle.email}>t.me/zensorfictus</a></p>
+                    <p><a href="https://t.me/zensorfictus" target="_blank" rel="noopener noreferrer" className={contactStyle.email}>t.me/zensorfictus</a></p>
                 </div>
         </div>
     )
