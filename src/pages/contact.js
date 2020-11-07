@@ -30,6 +30,7 @@ const ContactPage = () => {
     return (
         <div>
             <Head title="Contact" />
+            <div className={contactStyle.hideLinkBox} onClick={()=> window.open("https://t.me/zensorfictus", "_blank")}></div>
                 <div className={contactStyle.box}>
                     <div className={contactStyle.box1}><h1></h1></div>
                     <div className={contactStyle.box2}><h1></h1></div>
