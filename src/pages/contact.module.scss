@@ -5,8 +5,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-90deg);
-    width: fit-content;
+    width: 200px;
     font-size: small;
+    text-align: center;
 }
 
 
@@ -35,9 +36,6 @@
 }
 @media screen and (min-width: 700px) {
 
-    .hideLinkBox{
-        display: none;
-    }
 
     .box:hover {
         .box1 {
@@ -81,18 +79,8 @@
         left: 50%;
         transform: translate(-50%, -50%) rotate(-90deg);
         font-size: small;
-        overflow: visible;
-    }
-    .hideLinkBox{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-90deg);
-        height: 150px;
-        cursor: pointer;
-        width: 25px;
-        z-index: 10;
-        opacity: -1;
+        width: 150px;
+        text-align: center;
     }
     @for $i from 1 through 6 {
         .box#{$i} {

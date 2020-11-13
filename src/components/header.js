@@ -37,6 +37,10 @@ const Header = React.memo(() => {
         transform: "translate(0px)"
     })
 
+    const [navZindex, setNavZindex] = useState({
+        zIndex: "-1"
+    })
+
     useEffect(() => {
   
         const timer = setTimeout(() => {
@@ -55,14 +59,22 @@ const Header = React.memo(() => {
     const handleClick = () => {
         window.scrollTo(0, 0)
         if (navPosition.right === "0") {
+            const timer = setTimeout(() => {
+                setNavZindex({
+                    zIndex: "-1"
+                })
+            }, 1000)
+
             setNavPosition({
                 right: "-225px"
             })
             setBarRotation({
                 transform: "rotate(0deg)"
             })
-
         } else {
+            setNavZindex({
+                zIndex: "5"
+            })
             setNavPosition({
                 right: "0"
             })
@@ -77,11 +89,19 @@ const Header = React.memo(() => {
             setNavPosition({
                 right: "-225px"
             })
+            const timer = setTimeout(() => {
+                setNavZindex({
+                    zIndex: "-1"
+                })
+            }, 1000)
             setBarRotation({
                 transform: "rotate(0deg)"
             })
 
         } else {
+            setNavZindex({
+                zIndex: "5"
+            })
             setNavPosition({
                 right: "0"
             })
@@ -131,19 +151,19 @@ const Header = React.memo(() => {
                 <FontAwesomeIcon icon={faBars} className={headerStyles.bar} onClick={handleClick} style={barRotation} />
             </div>
             <FontAwesomeIcon style={coffeePosition} icon={faPersonBooth} className={headerStyles.coffee} />
-            <nav className={headerStyles.navListContainer}>
+            <nav className={headerStyles.navListContainer} style={navZindex}>
                 <ul className={headerStyles.navList} style={navPosition} >
                     <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} onClick={handleClick} onClick={() => handlePositionCoffee("Inicio")} to="/">Inicio</Link>
+                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem}  onClick={() => handlePositionCoffee("Inicio")} to="/">Inicio</Link>
                     </li>
                     <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} onClick={handleClick} onClick={() => handlePositionCoffee("Articulos")} to="/articulos">Articulos</Link>
+                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem}  onClick={() => handlePositionCoffee("Articulos")} to="/articulos">Articulos</Link>
                     </li>
                     <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} onClick={handleClick} onClick={() => handlePositionCoffee("About")} to="/nosotros">Nosotros</Link>
+                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem}  onClick={() => handlePositionCoffee("About")} to="/nosotros">Nosotros</Link>
                     </li>
                     <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} onClick={handleClick} onClick={() => handlePositionCoffee("Contact")} to="/contacto">Contacto</Link>
+                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem}  onClick={() => handlePositionCoffee("Contact")} to="/contacto">Contacto</Link>
                     </li>
                 </ul>
             </nav>

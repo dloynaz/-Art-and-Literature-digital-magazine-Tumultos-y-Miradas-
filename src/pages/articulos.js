@@ -87,7 +87,7 @@ const BlogPage = () => {
         {res.map(item => {
           return (
             <li className={blogStyles.post} style={opacity}>
-              <Link to={`/blog/${item.node.slug}`} className={blogStyles.link}>
+              <Link to={`/articulos/${item.node.slug}`} className={blogStyles.link}>
                 <div className={blogStyles.textContainer}>
                   <h2>{item.node.title}</h2>
                   <p style={{ fontSize: "0.9rem" }}>{item.node.author}</p>
