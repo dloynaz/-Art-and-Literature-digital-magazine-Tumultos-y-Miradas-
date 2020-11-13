@@ -6,8 +6,6 @@
     color: whitesmoke;
     border: none;
     border-bottom: solid thin white;
-    float: right;
-    
 }
 
 .search:focus{
@@ -74,6 +72,13 @@
 }
 
 @media screen and (min-width: 700px) {
+
+    .search{
+        float: right;
+        
+    }
+    
+
     .post:hover{
         .textContainer {
             transform: translate(15%);

@@ -82,9 +82,7 @@ const BlogPage = () => {
   return (
     <div>
       <Head title="Blogs" />
-      <form >
-        <input className={blogStyles.search} type={"text"} placeholder="Buscar por autor" onChange={handleChange}></input>
-      </form>
+        <input className={blogStyles.search} type="text" placeholder="Buscar por autor" onChange={handleChange}></input>
       <ol className={blogStyles.posts}>
         {res.map(item => {
           return (
