@@ -80,7 +80,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) rotate(-90deg);
-        font-size: 0.6rem;
+        font-size: small;
+        overflow: visible;
     }
     .hideLinkBox{
         position: absolute;

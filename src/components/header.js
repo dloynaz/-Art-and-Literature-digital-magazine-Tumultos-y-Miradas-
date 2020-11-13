@@ -137,13 +137,13 @@ const Header = React.memo(() => {
                         <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} onClick={handleClick} onClick={() => handlePositionCoffee("Inicio")} to="/">Inicio</Link>
                     </li>
                     <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} onClick={handleClick} onClick={() => handlePositionCoffee("Articulos")} to="/blog">Articulos</Link>
+                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} onClick={handleClick} onClick={() => handlePositionCoffee("Articulos")} to="/articulos">Articulos</Link>
                     </li>
                     <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} onClick={handleClick} onClick={() => handlePositionCoffee("About")} to="/about">Nosotros</Link>
+                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} onClick={handleClick} onClick={() => handlePositionCoffee("About")} to="/nosotros">Nosotros</Link>
                     </li>
                     <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} onClick={handleClick} onClick={() => handlePositionCoffee("Contact")} to="/contact">Contacto</Link>
+                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} onClick={handleClick} onClick={() => handlePositionCoffee("Contact")} to="/contacto">Contacto</Link>
                     </li>
                 </ul>
             </nav>
