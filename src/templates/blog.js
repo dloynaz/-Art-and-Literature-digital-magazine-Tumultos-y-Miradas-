@@ -96,8 +96,8 @@ const Blog = (props) => {
       <p>{props.data.contentfulBlogPost.publishedDate}</p>
       {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <Link to="/blog" className={templateStyle.button}><FontAwesomeIcon icon={faAngleLeft} className={templateStyle.icon} /><span>Articulos</span></Link>
-        <Link to="/about" className={templateStyle.author}> <div className={templateStyle.authorImgContainer} ><img src={props.data.contentfulBlogPost.authorPhoto.file.url}></img></div><span>{props.data.contentfulBlogPost.author}</span></Link>
+        <Link to="/articulos" className={templateStyle.button}><FontAwesomeIcon icon={faAngleLeft} className={templateStyle.icon} /><span>Articulos</span></Link>
+        <Link to="/nosotros" className={templateStyle.author}> <div className={templateStyle.authorImgContainer} ><img src={props.data.contentfulBlogPost.authorPhoto.file.url}></img></div><span>{props.data.contentfulBlogPost.author}</span></Link>
       </div>
       <ReadingBar width={width} />
 
