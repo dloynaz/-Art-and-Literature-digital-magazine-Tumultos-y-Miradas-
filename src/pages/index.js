@@ -153,7 +153,7 @@ const IndexPage = (props) => {
           edges.map(edge => {
             id++
             return (
-              <Link className={`${indexStyle.container}`} to={`/blog/${edge.node.slug}`} id={`element${id}`} key={id}>
+              <Link className={`${indexStyle.container}`} to={`/articulos/${edge.node.slug}`} id={`element${id}`} key={id}>
                 <h1 className={indexStyle.containerTitle}>
                   {edge.node.title}
                 </h1>
