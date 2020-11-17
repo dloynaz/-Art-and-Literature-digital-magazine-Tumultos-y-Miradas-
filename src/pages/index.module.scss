@@ -89,17 +89,19 @@
         transition: 1s;
         filter: hue-rotate(0deg) brightness(50%);
     }
-    &:hover {
+}
 
-        .container-img {
-            filter: hue-rotate(360deg) brightness(50%);
-            transition: 1s;
-        }
-        .container-box-img {
-            transition: 1s;
-            filter: drop-shadow(30px 25px 4px #4444dd);
-        }
+@media screen and (min-width: 700px) {
+  .container:hover{
+    .container-img {
+        filter: hue-rotate(360deg) brightness(50%);
+        transition: 1s;
     }
+    .container-box-img {
+        transition: 1s;
+        filter: drop-shadow(30px 25px 4px #4444dd);
+    }
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -123,7 +125,6 @@
                 z-index: 1;
                 margin-bottom: 0%;
                 display: none;
-                
             }
             .description {
                 position: static;
